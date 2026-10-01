@@ -12,11 +12,11 @@
   const requestId = leadForm.elements.namedItem('request_id');
   leadForm.addEventListener('submit', event => {
     // Это защита от случайной отправки неполностью настроенного примера.
-    if (!/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(leadForm.action)) {
-      event.preventDefault();
-      document.querySelector('#form-status').textContent = 'Сначала укажите URL опубликованного Apps Script Web App.';
-      return;
-    }
+   // if (!/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(leadForm.action)) {
+//   event.preventDefault();
+//   document.querySelector('#form-status').textContent = 'Сначала укажите URL опубликованного Apps Script Web App.';
+//   return;
+// }
     // Повторная доставка той же заявки сохраняет ID. Новый ID — после reset.
     if (!requestId.value) requestId.value = 'REQ-' + crypto.randomUUID().toUpperCase();
     if (typeof window.gtag === 'function') {
